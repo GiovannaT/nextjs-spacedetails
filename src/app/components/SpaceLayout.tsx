@@ -4,7 +4,7 @@ interface SpaceLayoutProps {
   
   export default function SpaceLayout({ children }: SpaceLayoutProps) {
     return (
-      <div className="pt-8 pr-[150px] pb-16 pl-[70px] bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
+      <div className="px-40 py-8 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
         {children}
       </div>
     );

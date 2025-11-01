@@ -29,6 +29,7 @@ export default function Home() {
         <SpaceTitle
           title={empreendimento.nome}
           address={empreendimento.endereco}
+          date={empreendimento.data_entrega_prevista}
         />
         <CardsList>
           <DataCard

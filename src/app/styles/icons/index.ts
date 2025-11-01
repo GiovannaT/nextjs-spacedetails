@@ -3,3 +3,7 @@ export * from "./CompassIcon";
 export * from "./MarkerPin01Icon";
 export * from "./Users02Icon";
 export * from "./Award01Icon";
+export * from "./XCloseIcon";
+export * from "./File06Icon";
+export * from "./ReceiptIcon";
+export * from "./CalendarIcon";
