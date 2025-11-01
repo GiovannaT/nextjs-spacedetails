@@ -15,16 +15,16 @@ import {
 import { File06Icon } from "./styles/icons/File06Icon";
 import { ReceiptIcon } from "./styles/icons/ReceiptIcon";
 import ContentGrid from "./components/ContentGrid";
-import { ActiveShapePieChart } from "./components/Charts";
+import { ActiveShapePieChart, SimplePieChart } from "./components/Charts";
 
 export default function Home() {
   const { empreendimento } = spaceData;
 
   const chartData = [
     {
-      name: "Vendidos",
-      value: empreendimento.estatisticas_gerais.unidades.vendidos,
-      color: "#9C000D",
+      name: "Disponíveis",
+      value: empreendimento.estatisticas_gerais.unidades.disponiveis,
+      color: "#F8F4F2",
     },
     {
       name: "Reservados",
@@ -32,9 +32,9 @@ export default function Home() {
       color: "#C30010",
     },
     {
-      name: "Disponíveis",
-      value: empreendimento.estatisticas_gerais.unidades.disponiveis,
-      color: "#F8F4F2",
+      name: "Vendidos",
+      value: empreendimento.estatisticas_gerais.unidades.vendidos,
+      color: "#9C000D",
     },
   ];
 
@@ -77,40 +77,52 @@ export default function Home() {
           />
         </CardsList>
 
-        <div className="w-full my-8 p-6 bg-white rounded-lg border border-gray-300 shadow-sm">
-          <h2 className="text-lg font-semibold text-[var(--color-gray-900)] mb-6">
-            Distribuição de Unidades
-          </h2>
-          <ActiveShapePieChart
-            data={chartData}
-            height={400}
-            innerRadius={80}
-            outerRadius={120}
-          />
-        </div>
-
-        <ContentGrid title="Imagens">
-          {empreendimento.arquivos_empreendimento.map((arquivo) => (
-            <ImageCard
-              size="default"
-              key={arquivo.id}
-              src={arquivo.url}
-              alt={arquivo.nome}
+        <div className="flex flex-row gap-2">
+          <div className="w-full my-8 p-6 bg-white rounded-lg border border-gray-300 shadow-sm">
+            <ActiveShapePieChart
+              data={chartData}
+              height={150}
+              innerRadius={50}
+              outerRadius={70}
+              total={empreendimento.estatisticas_gerais.unidades.total}
             />
-          ))}
-        </ContentGrid>
-        <ContentGrid title="Andamento da obra">
-          <DetailsCard finished={empreendimento.finished}>
-            {empreendimento.arquivos_obra.map((arquivo) => (
+          </div>
+          <div className="w-full my-8 p-6 bg-white rounded-lg border border-gray-300 shadow-sm">
+            <SimplePieChart
+              value={empreendimento.estatisticas_gerais.unidades.vendidos}
+              total={empreendimento.estatisticas_gerais.unidades.total}
+              label="Total Vendido"
+              color="#b91c1c"
+              height={150}
+              innerRadius={50}
+              outerRadius={70}
+            />
+          </div>
+        </div>
+        <div className="flex flex-row gap-2">
+          <ContentGrid title="Imagens">
+            {empreendimento.arquivos_empreendimento.map((arquivo) => (
               <ImageCard
-                size="small"
+                size="default"
                 key={arquivo.id}
                 src={arquivo.url}
                 alt={arquivo.nome}
               />
             ))}
-          </DetailsCard>
-        </ContentGrid>
+          </ContentGrid>
+          <ContentGrid title="Andamento da obra">
+            <DetailsCard finished={empreendimento.finished}>
+              {empreendimento.arquivos_obra.map((arquivo) => (
+                <ImageCard
+                  size="small"
+                  key={arquivo.id}
+                  src={arquivo.url}
+                  alt={arquivo.nome}
+                />
+              ))}
+            </DetailsCard>
+          </ContentGrid>
+        </div>
       </SpaceLayout>
     </PageLayout>
   );

@@ -20,7 +20,7 @@ export default function ButtonMain({
   type = "button",
 }: ButtonMainProps) {
   const baseStyles =
-    "font-medium rounded-lg transition-all duration-200 ease-in-out focus:outline-none border border-[var(--color-gray-300)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]";
+    "font-medium rounded-lg bg-white transition-all duration-200 ease-in-out focus:outline-none border border-[var(--color-gray-300)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]";
 
   const sizeStyles = {
     sm: "px-3 py-1.5 text-sm",
