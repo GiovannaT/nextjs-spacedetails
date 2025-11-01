@@ -10,3 +10,4 @@ export { default as Title } from "./Title";
 export { default as ImageCard } from "./ImageCard";
 export { default as ContentGrid } from "./ContentGrid";
 export { default as DetailsCard } from "./DetailsCard";
+export { default as Modal } from "./Modal";

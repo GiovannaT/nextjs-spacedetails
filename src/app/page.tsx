@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 import { CompassIcon, Users02Icon, Award01Icon } from "./styles/icons";
 import spaceData from "../../public/data/space.json";
 import {
@@ -11,6 +15,7 @@ import {
   ImageHeader,
   ImageCard,
   DetailsCard,
+  Modal,
 } from "./components";
 import { File06Icon } from "./styles/icons/File06Icon";
 import { ReceiptIcon } from "./styles/icons/ReceiptIcon";
@@ -19,6 +24,7 @@ import { ActiveShapePieChart, SimplePieChart } from "./components/Charts";
 
 export default function Home() {
   const { empreendimento } = spaceData;
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   const chartData = [
     {
@@ -107,6 +113,7 @@ export default function Home() {
                 key={arquivo.id}
                 src={arquivo.url}
                 alt={arquivo.nome}
+                onClick={() => setSelectedImage({ src: arquivo.url, alt: arquivo.nome })}
               />
             ))}
           </ContentGrid>
@@ -118,12 +125,34 @@ export default function Home() {
                   key={arquivo.id}
                   src={arquivo.url}
                   alt={arquivo.nome}
+                  onClick={() => setSelectedImage({ src: arquivo.url, alt: arquivo.nome })}
                 />
               ))}
             </DetailsCard>
           </ContentGrid>
         </div>
       </SpaceLayout>
+
+      <Modal
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+        size="xl"
+        hideHeader
+        noPadding
+      >
+        {selectedImage && (
+          <div className="relative w-full flex items-center justify-center p-4">
+            <Image
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              width={1200}
+              height={800}
+              className="max-w-full max-h-[85vh] w-auto h-auto object-contain"
+              priority
+            />
+          </div>
+        )}
+      </Modal>
     </PageLayout>
   );
 }
