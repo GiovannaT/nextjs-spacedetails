@@ -33,8 +33,8 @@ export default function SimplePieChart({
   ];
 
   return (
-    <div className={`flex items-center gap-6 ${className}`}>
-      <div style={{ width: height, height: height }}>
+    <div className={`flex flex-col sm:flex-row items-center gap-4 sm:gap-6 ${className}`}>
+      <div style={{ width: height, height: height }} className="flex-shrink-0">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
@@ -57,11 +57,11 @@ export default function SimplePieChart({
         </ResponsiveContainer>
       </div>
       
-      <div className="flex flex-col">
-        <p className="text-sm text-[var(--color-gray-600)] mb-1">
+      <div className="flex flex-col items-center sm:items-start">
+        <p className="text-xs sm:text-sm text-[var(--color-gray-600)] mb-1">
           {label}
         </p>
-        <p className="text-5xl font-bold text-[var(--color-gray-900)]">
+        <p className="text-4xl sm:text-5xl font-bold text-[var(--color-gray-900)]">
           {percentage}%
         </p>
       </div>

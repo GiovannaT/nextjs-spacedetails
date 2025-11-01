@@ -16,14 +16,16 @@ export default function ImageHeader({
   className = "",
 }: ImageHeaderProps) {
   return (
-    <Image
-      src={src}
-      alt={alt}
-      width={width}
-      loading="lazy"
-      height={height}
-      className={className}
-      style={{ width: "100%", height: `${height}px`, objectFit: "cover", objectPosition: "left" }}
-    />
+    <div className="w-full h-[180px] sm:h-[220px] md:h-[240px] relative overflow-hidden">
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        loading="lazy"
+        height={height}
+        className={`object-cover object-left ${className}`}
+        style={{ width: "100%", height: "100%" }}
+      />
+    </div>
   );
 }

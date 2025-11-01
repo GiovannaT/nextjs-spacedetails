@@ -20,12 +20,12 @@ export default function ButtonMain({
   type = "button",
 }: ButtonMainProps) {
   const baseStyles =
-    "font-medium rounded-lg bg-white transition-all duration-200 ease-in-out focus:outline-none border border-[var(--color-gray-300)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]";
+    "font-medium rounded-lg bg-white dark:bg-slate-800 transition-all duration-200 ease-in-out focus:outline-none border border-[var(--color-gray-300)] dark:border-slate-700 shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] dark:shadow-[0px_1px_2px_0px_rgba(0,0,0,0.3)]";
 
   const sizeStyles = {
-    sm: "px-3 py-1.5 text-sm",
-    md: "px-4 py-2 text-base",
-    lg: "px-6 py-3 text-lg",
+    sm: "px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm",
+    md: "px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base",
+    lg: "px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg",
   };
 
   const disabledStyles = "opacity-50 cursor-not-allowed";
@@ -37,11 +37,11 @@ export default function ButtonMain({
       disabled={disabled}
       className={`${baseStyles} ${variant} ${sizeStyles[size]} ${
         disabled ? disabledStyles : ""
-      } ${className} cursor-pointer flex items-center gap-2`}
+      } ${className} cursor-pointer flex items-center gap-1 sm:gap-2 justify-center`}
     >
       {children}
       {label && (
-        <span className="text-sm text-[var(--color-gray-700)]">{label}</span>
+        <span className="text-xs sm:text-sm text-[var(--color-gray-700)] whitespace-nowrap">{label}</span>
       )}
     </button>
   );

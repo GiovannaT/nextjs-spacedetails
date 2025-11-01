@@ -6,7 +6,7 @@ interface DataCardProps {
 
 export default function DataCard({ title, value, icon }: DataCardProps) {
   return (
-    <div className="flex flex-col gap-2 bg-white border border-gray-300 rounded-lg p-3 sm:p-4 flex-1 min-w-[150px] sm:min-w-[200px]">
+    <div className="flex flex-col gap-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-lg p-3 sm:p-4 flex-1 min-w-[150px] sm:min-w-[200px] transition-colors">
       <div className="flex items-center gap-2 text-[var(--color-gray-600)]">
         {icon}
         <h3 className="text-xs sm:text-sm font-medium text-[var(--color-gray-600)]">

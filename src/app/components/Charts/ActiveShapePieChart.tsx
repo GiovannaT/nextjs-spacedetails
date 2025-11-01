@@ -33,7 +33,7 @@ export default function ActiveShapePieChart({
   const calculatedTotal = total || data.reduce((sum, item) => sum + item.value, 0);
 
   return (
-    <div className={`flex flex-col lg:flex-row gap-8 items-center ${className}`}>
+    <div className={`flex flex-col md:flex-row gap-4 md:gap-8 items-center ${className}`}>
       <div className="flex-1 w-full relative">
         <ResponsiveContainer width="100%" height={height}>
           <PieChart>
@@ -60,8 +60,8 @@ export default function ActiveShapePieChart({
         </ResponsiveContainer>
         {showTotalInCenter && (
           <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-            <p className="text-sm text-[var(--color-gray-600)] mb-1">Unidades</p>
-            <p className="text-5xl font-bold text-[var(--color-gray-900)]">
+            <p className="text-xs sm:text-sm text-[var(--color-gray-600)] mb-1">Unidades</p>
+            <p className="text-2xl sm:text-3xl font-bold text-[var(--color-gray-900)]">
               {calculatedTotal}
             </p>
           </div>
@@ -69,22 +69,22 @@ export default function ActiveShapePieChart({
       </div>
       
       {showLegend && (
-        <div className="flex flex-col gap-6 lg:min-w-[200px]">
+        <div className="flex flex-row md:flex-col gap-4 md:gap-6 md:min-w-[200px] w-full md:w-auto justify-center md:justify-start flex-wrap md:flex-nowrap">
           {data.map((item) => {
             return (
               <div 
                 key={item.name} 
-                className="flex items-start gap-3"
+                className="flex items-start gap-2 sm:gap-3"
               >
                 <div 
                   className="w-3 h-3 rounded-full flex-shrink-0 mt-1" 
                   style={{ backgroundColor: item.color }}
                 />
                 <div className="flex flex-col">
-                  <p className="text-sm text-[var(--color-gray-600)] mb-1">
+                  <p className="text-xs sm:text-sm text-[var(--color-gray-600)] mb-1">
                     {item.name}
                   </p>
-                  <p className="text-2xl font-bold text-[var(--color-gray-900)]">
+                  <p className="text-lg sm:text-2xl font-bold text-[var(--color-gray-900)]">
                     {item.value.toLocaleString()}
                   </p>
                 </div>

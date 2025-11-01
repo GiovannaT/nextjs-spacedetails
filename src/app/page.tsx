@@ -83,8 +83,8 @@ export default function Home() {
           />
         </CardsList>
 
-        <div className="flex flex-row gap-2">
-          <div className="w-full my-8 p-6 bg-white rounded-lg border border-gray-300 shadow-sm">
+        <div className="flex flex-col md:flex-row gap-2">
+          <div className="w-full my-3 p-4 sm:p-6 bg-white dark:bg-slate-800 rounded-lg border border-gray-300 dark:border-slate-700 shadow-sm transition-colors">
             <ActiveShapePieChart
               data={chartData}
               height={150}
@@ -93,19 +93,18 @@ export default function Home() {
               total={empreendimento.estatisticas_gerais.unidades.total}
             />
           </div>
-          <div className="w-full my-8 p-6 bg-white rounded-lg border border-gray-300 shadow-sm">
+          <div className="flex items-center justify-center w-full my-3 p-4 sm:p-6 bg-white dark:bg-slate-800 rounded-lg border border-gray-300 dark:border-slate-700 shadow-sm transition-colors">
             <SimplePieChart
               value={empreendimento.estatisticas_gerais.unidades.vendidos}
               total={empreendimento.estatisticas_gerais.unidades.total}
               label="Total Vendido"
-              color="#b91c1c"
               height={150}
               innerRadius={50}
               outerRadius={70}
             />
           </div>
         </div>
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-col lg:flex-row gap-4">
           <ContentGrid title="Imagens">
             {empreendimento.arquivos_empreendimento.map((arquivo) => (
               <ImageCard
@@ -141,13 +140,13 @@ export default function Home() {
         noPadding
       >
         {selectedImage && (
-          <div className="relative w-full flex items-center justify-center p-4">
+          <div className="relative w-full flex items-center justify-center p-2 sm:p-4">
             <Image
               src={selectedImage.src}
               alt={selectedImage.alt}
               width={1200}
               height={800}
-              className="max-w-full max-h-[85vh] w-auto h-auto object-contain"
+              className="max-w-full max-h-[75vh] sm:max-h-[85vh] w-auto h-auto object-contain rounded-lg"
               priority
             />
           </div>

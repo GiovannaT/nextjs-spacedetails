@@ -3,5 +3,5 @@ interface CardsListProps {
 }
 
 export default function CardsList({ children }: CardsListProps) {
-  return <div className="flex flex-row gap-2 flex-wrap w-full">{children}</div>;
+  return <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 w-full">{children}</div>;
 }

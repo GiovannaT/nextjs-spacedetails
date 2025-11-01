@@ -12,7 +12,7 @@ export default function ContentGrid({
   return (
     <div className="flex flex-col gap-2 w-full">
       {title && (
-        <h2 className="text-base font-medium text-[var(--color-gray-900)]">
+        <h2 className="text-base font-medium text-[var(--color-gray-900)] dark:text-slate-100">
           {title}
         </h2>
       )}
