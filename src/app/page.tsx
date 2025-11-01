@@ -9,9 +9,12 @@ import {
   CardsList,
   DataCard,
   ImageHeader,
+  ImageCard,
+  DetailsCard,
 } from "./components";
 import { File06Icon } from "./styles/icons/File06Icon";
 import { ReceiptIcon } from "./styles/icons/ReceiptIcon";
+import ContentGrid from "./components/ContentGrid";
 export default function Home() {
   const { empreendimento } = spaceData;
 
@@ -53,6 +56,30 @@ export default function Home() {
             icon={<ReceiptIcon />}
           />
         </CardsList>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+          <ContentGrid title="Imagens">
+            {empreendimento.arquivos_empreendimento.map((arquivo) => (
+              <ImageCard
+                size="default"
+                key={arquivo.id}
+                src={arquivo.url}
+                alt={arquivo.nome}
+              />
+            ))}
+          </ContentGrid>
+          <ContentGrid title="Andamento da obra">
+            <DetailsCard finished={empreendimento.finished}>
+              {empreendimento.arquivos_obra.map((arquivo) => (
+                <ImageCard
+                  size="small"
+                  key={arquivo.id}
+                  src={arquivo.url}
+                  alt={arquivo.nome}
+                />
+              ))}
+            </DetailsCard>
+          </ContentGrid>
+        </div>
       </SpaceLayout>
     </PageLayout>
   );

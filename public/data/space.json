@@ -1,8 +1,9 @@
 {
   "empreendimento": {
     "nome": "Splendor Jardim",
-    "endereco": "Rua Doutor Rubens Awada, 33, Tamanduateí 3 - Santo André",
+    "endereco": "Rua Doutor Rubens Awada, 33, Tamanduateí 3 _ Santo André",
     "data_entrega_prevista": "01/10/2028",
+    "finished": false,
     "andamento_obra": {
       "entrega_prevista_texto": "Em Construção",
       "status": "Em Construção"
@@ -19,6 +20,76 @@
         "reservados": 40,
         "vendidos": 156
       }
-    }
+    },
+    "arquivos_empreendimento": [
+      {
+        "id": "1",
+        "nome": "Planta Baixa",
+        "url": "/assets/patriani-file-1.png",
+        "tipo": "imagem"
+      },
+      {
+        "id": "2",
+        "nome": "Memorial Descritivo",
+        "url": "/assets/patriani-file-2.png",
+        "tipo": "imagem"
+      },
+      {
+        "id": "3",
+        "nome": "Projeto Aprovado",
+        "url": "/assets/patriani-file-3.png",
+        "tipo": "imagem"
+      },
+      {
+        "id": "4",
+        "nome": "Planta Baixa",
+        "url": "/assets/patriani-file-1.png",
+        "tipo": "imagem"
+      },
+      {
+        "id": "5",
+        "nome": "Memorial Descritivo",
+        "url": "/assets/patriani-file-2.png",
+        "tipo": "imagem"
+      },
+      {
+        "id": "6",
+        "nome": "Projeto Aprovado",
+        "url": "/assets/patriani-file-3.png",
+        "tipo": "imagem"
+      }
+    ],
+    "arquivos_obra": [
+      {
+        "id": "1",
+        "nome": "Planta Baixa",
+        "url": "/assets/patriani-file-4.png",
+        "tipo": "imagem"
+      },
+      {
+        "id": "2",
+        "nome": "Memorial Descritivo",
+        "url": "/assets/patriani-file-5.png",
+        "tipo": "imagem"
+      },
+      {
+        "id": "3",
+        "nome": "Planta Baixa",
+        "url": "/assets/patriani-file-4.png",
+        "tipo": "imagem"
+      },
+      {
+        "id": "4",
+        "nome": "Memorial Descritivo",
+        "url": "/assets/patriani-file-5.png",
+        "tipo": "imagem"
+      },
+      {
+        "id": "5",
+        "nome": "Memorial Descritivo",
+        "url": "/assets/patriani-file-5.png",
+        "tipo": "imagem"
+      }
+    ]
   }
 }

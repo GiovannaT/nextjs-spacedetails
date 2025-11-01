@@ -7,3 +7,6 @@ export { default as PageLayout } from "./PageLayout";
 export { default as SpaceLayout } from "./SpaceLayout";
 export { default as SpaceTitle } from "./SpaceTitle";
 export { default as Title } from "./Title";
+export { default as ImageCard } from "./ImageCard";
+export { default as ContentGrid } from "./ContentGrid";
+export { default as DetailsCard } from "./DetailsCard";

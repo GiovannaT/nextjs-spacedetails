@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --color-yellow-700: #E5961E;
-  --color-yellow-200: #FFF2DE;
-  
-  --color-gray-900: #1A1717;
-  --color-gray-700: #403E3D;
-  --color-gray-600: #504D4C;
-  --color-gray-300: #D7D2CF;
+  --color-yellow-700: #e5961e;
+  --color-yellow-200: #fff2de;
+
+  --color-gray-900: #1a1717;
+  --color-gray-700: #403e3d;
+  --color-gray-600: #504d4c;
+  --color-gray-300: #d7d2cf;
 }
 
 @media (prefers-color-scheme: dark) {
