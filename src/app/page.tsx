@@ -15,8 +15,28 @@ import {
 import { File06Icon } from "./styles/icons/File06Icon";
 import { ReceiptIcon } from "./styles/icons/ReceiptIcon";
 import ContentGrid from "./components/ContentGrid";
+import { ActiveShapePieChart } from "./components/Charts";
+
 export default function Home() {
   const { empreendimento } = spaceData;
+
+  const chartData = [
+    {
+      name: "Vendidos",
+      value: empreendimento.estatisticas_gerais.unidades.vendidos,
+      color: "#9C000D",
+    },
+    {
+      name: "Reservados",
+      value: empreendimento.estatisticas_gerais.unidades.reservados,
+      color: "#C30010",
+    },
+    {
+      name: "Disponíveis",
+      value: empreendimento.estatisticas_gerais.unidades.disponiveis,
+      color: "#F8F4F2",
+    },
+  ];
 
   return (
     <PageLayout>
@@ -56,30 +76,41 @@ export default function Home() {
             icon={<ReceiptIcon />}
           />
         </CardsList>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
-          <ContentGrid title="Imagens">
-            {empreendimento.arquivos_empreendimento.map((arquivo) => (
+
+        <div className="w-full my-8 p-6 bg-white rounded-lg border border-gray-300 shadow-sm">
+          <h2 className="text-lg font-semibold text-[var(--color-gray-900)] mb-6">
+            Distribuição de Unidades
+          </h2>
+          <ActiveShapePieChart
+            data={chartData}
+            height={400}
+            innerRadius={80}
+            outerRadius={120}
+          />
+        </div>
+
+        <ContentGrid title="Imagens">
+          {empreendimento.arquivos_empreendimento.map((arquivo) => (
+            <ImageCard
+              size="default"
+              key={arquivo.id}
+              src={arquivo.url}
+              alt={arquivo.nome}
+            />
+          ))}
+        </ContentGrid>
+        <ContentGrid title="Andamento da obra">
+          <DetailsCard finished={empreendimento.finished}>
+            {empreendimento.arquivos_obra.map((arquivo) => (
               <ImageCard
-                size="default"
+                size="small"
                 key={arquivo.id}
                 src={arquivo.url}
                 alt={arquivo.nome}
               />
             ))}
-          </ContentGrid>
-          <ContentGrid title="Andamento da obra">
-            <DetailsCard finished={empreendimento.finished}>
-              {empreendimento.arquivos_obra.map((arquivo) => (
-                <ImageCard
-                  size="small"
-                  key={arquivo.id}
-                  src={arquivo.url}
-                  alt={arquivo.nome}
-                />
-              ))}
-            </DetailsCard>
-          </ContentGrid>
-        </div>
+          </DetailsCard>
+        </ContentGrid>
       </SpaceLayout>
     </PageLayout>
   );
