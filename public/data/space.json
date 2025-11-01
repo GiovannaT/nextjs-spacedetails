@@ -1,0 +1,24 @@
+{
+  "empreendimento": {
+    "nome": "Splendor Jardim",
+    "endereco": "Rua Doutor Rubens Awada, 33, Tamanduateí 3 - Santo André",
+    "data_entrega_prevista": "01/10/2028",
+    "andamento_obra": {
+      "entrega_prevista_texto": "Em Construção",
+      "status": "Em Construção"
+    },
+    "imagem_principal": "/assets/d7b8db730019aa3480eda96891ab8c88f05a29fb.png",
+    "estatisticas_gerais": {
+      "compradores": 156,
+      "eventos": 3,
+      "documentos": 4,
+      "conexoes": 10,
+      "unidades": {
+        "total": 226,
+        "disponiveis": 30,
+        "reservados": 40,
+        "vendidos": 156
+      }
+    }
+  }
+}
