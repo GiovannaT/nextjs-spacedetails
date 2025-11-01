@@ -9,7 +9,7 @@ interface SpaceTitleProps {
 
 export default function SpaceTitle({ title, address, date }: SpaceTitleProps) {
   return (
-    <section className="flex flex-row gap-2 justify-between">
+    <section className="flex flex-row gap-2 justify-between mb-4">
       <aside>
         <h1 className="text-2xl font-bold">{title}</h1>
         <div

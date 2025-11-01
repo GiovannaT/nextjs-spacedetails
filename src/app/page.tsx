@@ -48,7 +48,7 @@ export default function Home() {
         src={empreendimento.imagem_principal}
         alt={empreendimento.nome}
       />
-      <SpaceLayout>
+      <SpaceLayout >
         <SpaceTitle
           title={empreendimento.nome}
           address={empreendimento.endereco}
